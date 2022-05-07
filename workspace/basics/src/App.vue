@@ -1,23 +1,61 @@
 <script setup>
   import { ref } from 'vue'
+  import { getImg } from './utils/getImg'
 
-  const title = 'The Final Empire'
-  const author = 'Brandon Sanderson'
-  const age = ref(45)
+  const books = ref([
+    {
+      title: 'name of the wind',
+      author: 'patrick rothfuss',
+      image: getImg('1.jpg'),
+    },
+    {
+      title: 'the way of kings',
+      author: 'bardon sanderson',
+      image: getImg('2.jpg'),
+    },
+    {
+      title: 'the final empire',
+      author: 'bardon sanderson',
+      image: getImg('3.jpg'),
+    },
+  ])
 
-  const increaseAge = () => {
-    age.value++
+  const showBook = ref(true)
+  const toggle = () => {
+    showBook.value = !showBook.value
   }
-  const decreaseAge = () => {
-    age.value--
-  }
+
+  const url = ref('http://www.thenetninja.co.uk')
 </script>
 
 <template>
-  <p>{{ title }} - {{ author }} - {{ age }}</p>
-  <button @click="increaseAge">Increase Age</button>
-  &nbsp;
-  <button @click="decreaseAge">Decrease Age</button>
+  <div>
+    <button @click="toggle">
+      {{ showBook ? 'Show' : 'Hidden' }}
+    </button>
+  </div>
+  <div v-if="showBook">
+    <ul>
+      <li v-for="book in books" :key="book.title">
+        <img :src="book.image" :alt="book.title" />
+        <h3>{{ book.title }}</h3>
+        <p>
+          {{ book.author }}
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <a :href="url">Best website ever.</a>
 </template>
 
-<style></style>
+<style scoped>
+  .box {
+    padding: 100px 0;
+    width: 400px;
+    text-align: center;
+    background: #ddd;
+    margin: 20px;
+    display: inline-block;
+  }
+</style>
