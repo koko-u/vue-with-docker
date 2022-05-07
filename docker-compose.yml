@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    image: "kokouu/vue-app:v1"
+    build:
+      context: ./context
+    container_name: vue-app
+    volumes:
+      - type: bind
+        source: ./workspace
+        target: /usr/workspace
+      - type: volume
+        source: basic_node_modules
+        target: /usr/workspace/basics/node_modules
+        volume:
+          nocopy: true
+    tty: true
+    working_dir: /usr/workspace
+volumes:
+  basic_node_modules:

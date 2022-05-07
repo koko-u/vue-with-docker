@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.formatOnSaveMode": "modifications",
+		"files.autoSave": "afterDelay",
+		"prettier.vueIndentScriptAndStyle": true,
+		"editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace",
+		"editor.cursorStyle": "block",
+		"editor.minimap.enabled": false,
+		"auto-close-tag.disableOnLanguage": [
+			"typescript"
+		],
+		"eslint.alwaysShowStatus": true,
+		"eslint.packageManager": "yarn"
+	}
+}
