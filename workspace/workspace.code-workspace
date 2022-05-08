@@ -13,6 +13,9 @@
 		"files.autoSave": "afterDelay",
 		"prettier.vueIndentScriptAndStyle": true,
 		"eslint.alwaysShowStatus": true,
-		"eslint.packageManager": "yarn"
+		"eslint.packageManager": "yarn",
+		"[vue]": {
+			"editor.tabSize": 2
+		}
 	}
 }

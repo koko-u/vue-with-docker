@@ -1,32 +1,13 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+  import Modal from './components/Modal.vue'
 
   const title = 'My first vue app :('
-
-  const name = ref<HTMLInputElement | undefined>(undefined)
-  onMounted(() => {
-    if (name.value) {
-      name.value.focus()
-    }
-  })
-
-  const handleClick = () => {
-    if (name.value) {
-      console.log('name: ', name.value.value)
-      name.value.classList.add('active')
-    }
-    
-  }
+  
 </script>
 
 <template>
   <h1>{{ title }}</h1>
-  
-  <div>
-    <input type="text" ref="name">
-    <button @click="handleClick">Click me</button>
-  </div>
-  
+  <Modal />
 </template>
 
 <style>
