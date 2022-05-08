@@ -14,7 +14,13 @@ services:
         target: /usr/workspace/basics/node_modules
         volume:
           nocopy: true
+      - type: volume
+        source: modal_node_modules
+        target: /usr/workspace/modal-project/node_modules
+        volume:
+          nocopy: true
     tty: true
     working_dir: /usr/workspace
 volumes:
   basic_node_modules:
+  modal_node_modules:
