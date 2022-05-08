@@ -1,9 +1,9 @@
 <script setup lang="ts">
-  const title = 'My first vue app ;-'
+  const title = 'My first vue app :('
 </script>
 
 <template>
-  <h1>{{ title }}...</h1>
+  <h1>{{ title }}</h1>
 </template>
 
 <style>

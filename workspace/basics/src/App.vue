@@ -41,6 +41,7 @@
 <template>
   <div class="board">
     <div>
+      abc
       <button @click="toggle">
         {{ showBook ? 'Show' : 'Hidden' }}
       </button>
